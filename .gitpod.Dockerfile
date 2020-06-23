@@ -1,8 +1,8 @@
 FROM gitpod/workspace-full:latest
 
 # create a non-privileged user to use at runtime
-RUN addgroup -g 50 -S pgadmin \
- && adduser -D -S -h /pgadmin -s /sbin/nologin -u 1000 -G pgadmin pgadmin \
+RUN addgroup --group 50 -S pgadmin \
+ && adduser -D -S -h /pgadmin --shell /sbin/nologin -u 1000 -G pgadmin pgadmin \
  && mkdir -p /pgadmin/config /pgadmin/storage \
  && chown -R 1000:50 /pgadmin
 
